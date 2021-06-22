@@ -1,12 +1,8 @@
-import './App.css';
+import Navigation from './components/includes/navigation' 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Welcome to IMS</p>
-      </header>
-    </div>
+      <Navigation />
   );
 }
 

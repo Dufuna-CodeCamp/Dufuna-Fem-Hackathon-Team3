@@ -1,0 +1,14 @@
+ul, li {
+    padding: 0px;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: thistle;
+    height: 100%;
+}
+
+.sidebar ul li {
+    display: block;
+    padding: 20px 40px;
+}
