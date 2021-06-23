@@ -1,4 +1,30 @@
+@font-face {
+  font-family: "font1";
+  src: url("./assets/fonts/Lato-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font2";
+  src: url("./assets/fonts/Lato-Bold.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body, p {
+  font-family: font1;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
 .page{
   padding: 80px;
   width: 80%;
+}
+
+.font2{
+  font-family: font2;
 }

@@ -1,0 +1,19 @@
+#container {
+    height: 100vh;
+    position: relative;
+}
+
+#container p {
+    color: #0E4547;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+#vertical-center {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

@@ -26,7 +26,7 @@ ul, li {
     background-color: rgba(255, 255, 255, 0.24);
 }
 
-img {
+.sidebar img {
     width: 16px;
     height: 20px;
     margin-right: 10px;
