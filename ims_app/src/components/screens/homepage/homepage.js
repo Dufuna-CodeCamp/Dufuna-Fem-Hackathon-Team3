@@ -6,7 +6,7 @@ class Homepage extends Component {
             <div className="App">
                 <header className="App-header">
                     <p>Welcome to IMS</p>
-                    <p className='text-white'><a href='/inventories'>Proceed</a></p>
+                    <p className='text-white'><a href='/categories'>Proceed</a></p>
                 </header>
             </div>
         );

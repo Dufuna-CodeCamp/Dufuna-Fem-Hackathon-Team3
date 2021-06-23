@@ -4,11 +4,36 @@ ul, li {
 
 .sidebar {
     width: 20%;
-    background-color: thistle;
+    background-color: #2C5C5E;
+    color: #fff;
     height: 100%;
+    /* border: 1px solid #000; */
+    position: absolute;
 }
 
 .sidebar ul li {
     display: block;
-    padding: 20px 40px;
+    padding: 10px 5px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar li:hover {
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+img {
+    width: 16px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* To change the icons in png to white */
+.filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
 }
