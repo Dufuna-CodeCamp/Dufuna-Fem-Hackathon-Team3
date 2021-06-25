@@ -9,7 +9,7 @@ class Homepage extends Component {
             <div id='container'>
                 <div id='vertical-center'>
                     <div className='text-center mb-3'>
-                        <a href='/inventories'>
+                        <a href='/categories'>
                             <img src={Logo} alt='homepage logo' width='55%' style={{cursor: 'pointer'}}/>
                         </a>
                     </div>
