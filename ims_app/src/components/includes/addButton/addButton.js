@@ -8,8 +8,9 @@ const AddButton = (props) => {
             id='add-btn'
             style={{ float: 'right', border: 'none' }}
             className='mr-5'
+            onClick={props.onAddBtnClick}
         >
-            <PlusIcon /> {props.addButtonTitle}
+            <PlusIcon /> {'Add a new ' + props.title}
         </button>
     )
 }
