@@ -1,0 +1,15 @@
+.out-of-stock{
+    background-color: #DF2121;
+}
+.in-stock{
+    background-color: #2C5C5E;
+}
+.low-stock{
+    background-color: #B7BA2A;
+}
+
+.out-of-stock, .in-stock, .low-stock {
+    color: white;
+    border-radius: 10px;
+    padding: 0px 15px;
+}

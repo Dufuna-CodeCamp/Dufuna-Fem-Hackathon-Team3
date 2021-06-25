@@ -4,9 +4,9 @@ ul, li {
 #toolbar{
     display:flex;
     background-color: rgb(228, 217, 217);
-    height: 70px;
+    height: 30px;
     width: 100%;
-    padding: 40px;
+    padding: 30px;
     text-align: center;
     flex-wrap: wrap;
 }
@@ -20,20 +20,20 @@ ul, li {
     position: absolute;
     width: 200px;
     height: 100px;
-    left: -32px;
-    top: -6px; 
+    left: -52px;
+    top: 6px; 
 }
 
 .name {
     position: absolute;
     width: 140px;
     height: 58px;
-    left: 110px;
-    top: 12px;
+    left: 60px;
+    top: 0;
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 58px;
     color: #153C3E;
     }
@@ -42,43 +42,46 @@ ul, li {
     position: absolute; 
     width: auto;
     height: auto;
-    padding: 5px;
-    border-radius: 100%;
-    left: 900px;
-    top: 30px;
-    background: #C4C4C4;
+    left: 1052px;
+    top: 13px;
 }
 
 .settings {
     position: absolute;
     width: auto;
     height: auto;
-    Padding: 5px;
-    border-radius: 100%;
     left: 980px;
-    top: 30px;
-    background: #C4C4C4;
+    top: 13px;
 }
 
 .notification {
     position: absolute;
     width: auto;
     height: auto;
-    Padding: 5px;
+    left: 1132px;
+    top: 13px;
+}
+
+.help img, .notification img, .settings img{
+    background-color: #C4C4C4;
+    padding: 6px;
     border-radius: 100%;
-    left: 1060px;
-    top: 30px;
-    background: #C4C4C4;
 }
 
 .profile {
     position: absolute;
     width: 61px;
     height: 55px;
-    left: 1140px;
-    top: 17px;
+    left: 1212px;
+    top: 7px;
 }
 
-@media (max-width: 768px){
-    margin-right: 20px;
+.shadow{
+    box-shadow: 0 0rem .5rem rgba(0,0,0,.15)!important;
+}
+
+@media (max-width: 1240px){
+    .settings, .help, .notification, .profile{
+        display: none;
+    }
 } 

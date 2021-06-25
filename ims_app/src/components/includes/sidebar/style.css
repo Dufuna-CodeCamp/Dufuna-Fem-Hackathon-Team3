@@ -7,13 +7,13 @@ ul, li {
     background-color: #2C5C5E;
     color: #fff;
     height: 100%;
-    /* border: 1px solid #000; */
-    position: absolute;
 }
 
 .sidebar ul li {
     display: block;
     padding: 10px 5px;
+    cursor: pointer;  
+    padding-left: 1.5rem;
 }
 
 .sidebar a {
@@ -21,13 +21,16 @@ ul, li {
     color: white;
 }
 
-.sidebar li:hover {
+.sidebar li.active {
     border-style: none;
     background-color: rgba(255, 255, 255, 0.24);
 }
 
+.sidebar li:hover {
+    background-color: rgba(17, 49, 97, 0.24);
+}
+
 .sidebar img {
-    width: 16px;
     height: 20px;
     margin-right: 10px;
 }
@@ -37,3 +40,10 @@ ul, li {
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
 }
+
+@media (max-width: 540px){
+    .sidebar{
+        width: 100%;
+        height: fit-content;
+    }
+} 

@@ -10,14 +10,14 @@ import './style.css';
 class Toolbar extends Component {
     render() {
         return (
-            <div id='toolbar'>
+            <div id='toolbar' className='pl-5 shadow'>
                 <ul className='toolbar'>
-                    <li><a  className= "logo" href='/homepage'><img src= {LogoImage} alt="logo"/></a></li>
-                    <h1 className= "name">Omnix</h1>
-                    <li><a className= "settings" href='/setting'><img src= {GearIcon} alt="settings" /></a></li>
-                    <li><a className= "help" href='/help'><img src={HelpIcon} alt="help"/></a></li>
-                    <li><a className= "notification" href='/notification'><img src={BellIcon} alt="notification"/></a></li>
-                    <li><a className= "profile" href='/profile'><img src={ProfileIcon} alt="Profile"/></a></li>
+                    <li><a  className= "logo" href='/homepage'><img src= {LogoImage} width='80px' alt="logo"/></a></li>
+                    <h1 className= "name font1">Omnix</h1>
+                    <li><a className= "settings" href='/setting'><img src= {GearIcon} width='80%' alt="settings" /></a></li>
+                    <li><a className= "help" href='/help'><img src={HelpIcon} width='80%' alt="help"/></a></li>
+                    <li><a className= "notification" href='/notification'><img src={BellIcon} width='80%' alt="notification"/></a></li>
+                    <li><a className= "profile" href='/profile'><img src={ProfileIcon} width='80%' alt="Profile"/></a></li>
                 </ul>
             </div>
         )
