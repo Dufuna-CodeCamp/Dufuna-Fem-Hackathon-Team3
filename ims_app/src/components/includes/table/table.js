@@ -40,8 +40,8 @@ class Nav extends Component {
                                 <tr>
                                     {this.props.addSerialNumber &&
                                         (
-                                            <td>
-                                                {index + 1}
+                                            <td>   
+                                                {(index + 1 < 10? '0' : '' ) + (index + 1)}
                                             </td>
                                         )
                                     }

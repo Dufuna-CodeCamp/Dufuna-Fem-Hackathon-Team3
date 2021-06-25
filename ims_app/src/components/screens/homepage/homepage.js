@@ -23,6 +23,7 @@ class Homepage extends Component {
                         <Button
                             name='Proceed'
                             href='/inventories'
+                            style={{width:'200px'}}
                         />
                     </div>
                 </div>
