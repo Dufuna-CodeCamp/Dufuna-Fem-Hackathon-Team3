@@ -22,7 +22,7 @@ class Homepage extends Component {
                         <p className='mb-2'>Inventory Management System</p>
                         <Button
                             name='Proceed'
-                            href='/categories'
+                            href='/inventories'
                         />
                     </div>
                 </div>

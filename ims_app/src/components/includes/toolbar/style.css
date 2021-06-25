@@ -1,6 +1,87 @@
-#toolbar{
-    background-color: white;
-    height: 60px;
-    padding: 20px;
-    text-align: center;
+ul, li {
+    padding: 0px;
 }
+#toolbar{
+    display:flex;
+    background-color: rgb(228, 217, 217);
+    height: 30px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    left: -52px;
+    top: 6px; 
+}
+
+.name {
+    position: absolute;
+    width: 140px;
+    height: 58px;
+    left: 60px;
+    top: 0;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 58px;
+    color: #153C3E;
+    }
+
+.help {
+    position: absolute; 
+    width: auto;
+    height: auto;
+    left: 1052px;
+    top: 13px;
+}
+
+.settings {
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 980px;
+    top: 13px;
+}
+
+.notification {
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 1132px;
+    top: 13px;
+}
+
+.help img, .notification img, .settings img{
+    background-color: #C4C4C4;
+    padding: 6px;
+    border-radius: 100%;
+}
+
+.profile {
+    position: absolute;
+    width: 61px;
+    height: 55px;
+    left: 1212px;
+    top: 7px;
+}
+
+.shadow{
+    box-shadow: 0 0rem .5rem rgba(0,0,0,.15)!important;
+}
+
+@media (max-width: 1240px){
+    .settings, .help, .notification, .profile{
+        display: none;
+    }
+} 
