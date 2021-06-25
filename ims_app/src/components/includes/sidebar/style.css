@@ -7,8 +7,6 @@ ul, li {
     background-color: #2C5C5E;
     color: #fff;
     height: 100%;
-    /* border: 1px solid #000; */
-    position: absolute;
 }
 
 .sidebar ul li {
