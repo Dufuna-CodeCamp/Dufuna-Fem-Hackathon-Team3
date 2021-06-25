@@ -7,13 +7,19 @@ class Sales extends Component {
         super(props);
         this.state = {
             headers : [
-                {'text' : 'Item Sold', 'value' : "name"},
-                {'text' : 'Sold at', 'value' : "createdAt"},
-                {'text' : 'Sold by', 'value' : "createdBy"},
+                {'text' : 'Product', 'value' : "name"},
+                {'text' : 'Price ($)', 'value' : "amount"}, 
+                {'text' : 'Quantity', 'value' : "quantity"},
+                {'text' : 'Customer Name', 'value' : "customerName"},
+                {'text' : 'Created date', 'value' : "createdDate"},
+                {'text' : 'Created by', 'value' : "createdBy"},
             ],
             sales : [
-                {"name" : "Maggi", "createdAt" : "3/02/2021", "createdBy" : "Lois"},
-                {"name" : "Kitchen Table", "createdAt" : "6/08/2023", "createdBy" : "Taiwo"}
+                {"name" : "Maggi", "quantity": "10", "customerName": "Ahmed", "createdBy": "Lois", "createdDate" : "3/02/2021", "amount" : "1.00"},
+                {"name" : "Kitchen Table","quantity": "5", "customerName": "Otedola", "createdBy": "Saidat", "createdDate" : "6/08/2023", "amount" : "3.00"},
+                {"name" : "Oil", "quantity": "15", "customerName": "Dangote", "createdBy": "Oge", "createdDate" : "6/08/2023", "amount" : "4.00"},
+                {"name" : "Shelves", "quantity": "5", "customerName": "Oge", "createdBy": "Bolanle", "createdDate" : "6/08/2023","amount" : "19.00"},
+                {"name" : "flour", "quantity": "20", "customerName": "Buhari", "createdBy": "Elijah", "createdDate" : "6/08/2023", "amount" : "21.00"},
             ],
             selectedItem : ""
         }
