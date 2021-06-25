@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Input from '../../includes/input/Input';
-import Button from '../../includes/button/Button';
+import Button from '../../includes/button/button';
 
 
 class AddInventory extends Component {

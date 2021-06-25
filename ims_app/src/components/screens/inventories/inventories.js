@@ -16,7 +16,8 @@ class Inventories extends Component {
                 {"name" : "Indomie", "quantity" : '23', "status" : "in stock"},
                 {"name" : "Dabur Herbal Toothpaste", "quantity" : '5', "status" : "low stock"}
             ],
-            selectedItem : ""
+            isListPage: true,
+            isAddPage: false
         }
     }
 
@@ -35,21 +36,19 @@ class Inventories extends Component {
         };
     }
 
-    setSelectedItem= (val) => {
-        this.setState({selectedItem: val.name},
-            alert(`${val.name} was clicked`)
-        );
+    showAddPage = () => {
+        this.setState({isListPage: false, isAddPage: true})
     }
 
     render() {
         return (
             <Section
-                title='Inventories'
-                addButtonTitle='Add a new Inventory'
-                isListPage
+                mainTitle='Inventories'
+                title='inventory'
+                isListPage={this.state.isListPage}
+                isAddPage={this.state.isAddPage}
                 addSerialNumber
-                addActionBtn
-                onActionClick={this.setSelectedItem}
+                onAddBtnClick={this.showAddPage}
                 headers={this.state.headers}
                 items={this.state.inventories}
             />

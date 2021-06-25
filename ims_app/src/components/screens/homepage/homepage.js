@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Logo from '../../../assets/images/HomeLogo.png';
-import Button from '../../includes/button/Button';
+import Button from '../../includes/button/button';
 import './style.css';
 
 class Homepage extends Component {
@@ -23,6 +23,7 @@ class Homepage extends Component {
                         <Button
                             name='Proceed'
                             href='/inventories'
+                            style={{width:'200px'}}
                         />
                     </div>
                 </div>
