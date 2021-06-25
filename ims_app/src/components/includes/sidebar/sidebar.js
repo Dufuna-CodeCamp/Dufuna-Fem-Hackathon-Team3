@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from "react-router-dom";
 import HomeIcon from '../../../assets/icons/home.svg';
 import CategoryIcon from '../../../assets/icons/category.svg';
-import InventoryIcon from '../../../assets/icons/inventories.svg';
+import InventoryIcon from '../../../assets/icons/inventory.png';
 import VendorIcon from '../../../assets/icons/vendors.png';
 import PurchaseIcon from '../../../assets/icons/purchases.png';
 import SaleIcon from '../../../assets/icons/sales.png';
@@ -17,18 +17,18 @@ const Sidebar = () => {
         <div className='sidebar'>
             <ul>
                 <a href='/homepage'>
-                    <li className={splitPathname[1] === "" || splitPathname[1] === "homepage" ? "active" : ""}>
+                    <li className={splitPathname[1] === "" || splitPathname[1] === "homepage" ? "active" : "" } >
                         <img src={HomeIcon} alt="home icon" />Homepage
                     </li>
                 </a>
                 <a href='/categories'>
                     <li className={splitPathname[1] === "categories" ? "active" : ""}>
-                        <img src={CategoryIcon} alt="category icon" width='16px' />Categories
+                        <img src={CategoryIcon} alt="category icon" width='14px' />Categories
                     </li>
                 </a>
                 <a href='/inventories'>
                     <li className={splitPathname[1] === "inventories" ? "active" : ""}>
-                        <img src={InventoryIcon} alt="inventory icon" width='18px' />Inventories
+                        <img src={InventoryIcon} alt="inventory icon" className="filter" width="22px" height="22px" />Inventories
                     </li>
                 </a>
                 <a href='/vendors'>
