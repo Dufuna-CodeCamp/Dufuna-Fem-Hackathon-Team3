@@ -1,6 +1,84 @@
-#toolbar{
-    background-color: white;
-    height: 60px;
-    padding: 20px;
-    text-align: center;
+ul, li {
+    padding: 0px;
 }
+#toolbar{
+    display:flex;
+    background-color: rgb(228, 217, 217);
+    height: 70px;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    left: -32px;
+    top: -6px; 
+}
+
+.name {
+    position: absolute;
+    width: 140px;
+    height: 58px;
+    left: 110px;
+    top: 12px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 58px;
+    color: #153C3E;
+    }
+
+.help {
+    position: absolute; 
+    width: auto;
+    height: auto;
+    padding: 5px;
+    border-radius: 100%;
+    left: 900px;
+    top: 30px;
+    background: #C4C4C4;
+}
+
+.settings {
+    position: absolute;
+    width: auto;
+    height: auto;
+    Padding: 5px;
+    border-radius: 100%;
+    left: 980px;
+    top: 30px;
+    background: #C4C4C4;
+}
+
+.notification {
+    position: absolute;
+    width: auto;
+    height: auto;
+    Padding: 5px;
+    border-radius: 100%;
+    left: 1060px;
+    top: 30px;
+    background: #C4C4C4;
+}
+
+.profile {
+    position: absolute;
+    width: 61px;
+    height: 55px;
+    left: 1140px;
+    top: 17px;
+}
+
+@media (max-width: 768px){
+    margin-right: 20px;
+} 
