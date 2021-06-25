@@ -38,8 +38,6 @@ class Sales extends Component {
                 addButtonTitle='Add a new sale'
                 isListPage
                 addSerialNumber
-                addActionBtn
-                onActionClick={this.setSelectedItem}
                 headers={this.state.headers}
                 items={this.state.sales}
             />

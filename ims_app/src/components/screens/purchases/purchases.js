@@ -37,8 +37,6 @@ class Purchases extends Component {
                 title='Purchases'
                 addButtonTitle='Add New Purchase'
                 isListPage
-                addActionBtn
-                onActionClick={this.setSelectedItem}
                 headers={this.state.headers}
                 items={this.state.purchases}
             />
