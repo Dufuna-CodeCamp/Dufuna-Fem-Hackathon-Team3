@@ -7,6 +7,7 @@ const Button = props => {
             <button
                 style={props.style}
                 className={props.className}
+                onClick={props.action}
                 id='button'
             >
                 {props.name}
