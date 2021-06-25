@@ -18,10 +18,10 @@ class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isHomePage: false
+            isHomePage: false,
+            pathname: ''
         }
     }
-
 
     componentDidMount() {
         if (window.location.pathname === '/'
@@ -33,7 +33,7 @@ class Nav extends Component {
         return (
             <Router>
                 {!this.state.isHomePage && <Toolbar />}
-                <div className={!this.state.isHomePage && 'd-flex'} style={{ height: '100vh' }}>
+                <div className={!this.state.isHomePage ? 'd-flex flex-wrap page-container' : ''}>
                     {!this.state.isHomePage && <Sidebar />}
                     <Switch>
                         <Route exact path={['/', '/homepage']} component={Homepage} />

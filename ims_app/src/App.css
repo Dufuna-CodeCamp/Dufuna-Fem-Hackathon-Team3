@@ -20,11 +20,35 @@ body, p {
   box-sizing: border-box;
 }
 
-.page{
-  padding: 80px;
-  width: 80%;
+.font1{
+  font-family: font1;
 }
 
 .font2{
   font-family: font2;
 }
+
+.title{
+  font-family: font2;
+  color: #808182;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.page-container{
+  height: 100vh;
+}
+
+.page{
+  padding: 0px;
+  width: 80%;
+}
+
+@media (max-width: 540px){
+  .page-container{
+      height: auto;
+  }
+  .page{
+    width: 100%;
+  }
+} 
