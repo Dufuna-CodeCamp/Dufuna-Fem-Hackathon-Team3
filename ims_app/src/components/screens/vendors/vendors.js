@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddVendor from '../../includes/form/AddVendor'
+import AddVendor from './AddVendor';
 
 class Vendors extends Component {
     render () {

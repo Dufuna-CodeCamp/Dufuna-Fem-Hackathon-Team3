@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Logo from '../../../assets/images/HomeLogo.png';
-import Button from '../../includes/button/button';
+import Button from '../../includes/button/Button';
 import './style.css';
 
 class Homepage extends Component {

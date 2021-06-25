@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddInventory from '../../includes/form/AddInventory'
+import AddInventory from './AddInventory';
 
 class Inventories extends Component {
     render() {

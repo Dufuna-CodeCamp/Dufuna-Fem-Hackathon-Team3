@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddCategory from '../../includes/form/AddCategory';
+import AddCategory from './AddCategory';
 
 
 class Categories extends Component {

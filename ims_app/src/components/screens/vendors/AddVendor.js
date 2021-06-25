@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Input from './Input';
-import Button from './Button';
+import Input from '../../includes/input/Input';
+import Button from '../../includes/button/Button';
 
 
 class AddVendor extends Component {
@@ -18,6 +18,23 @@ class AddVendor extends Component {
     
     handleInputChange = (event) => {
         this.setState({[event.target.name]: event.target.value})
+    }
+
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+        console.log(`vendorName => ${this.state.vendorName}`);
+        console.log(`address => ${this.state.address}`);
+        console.log(`phoneNumber => ${this.state.phoneNumber}`);
+        console.log(`email => ${this.state.email}`);
+    }
+    handleClearForm = (e) => {
+     e.preventDefault();
+     this.setState({
+         vendorName: "",
+         address: "",
+         phoneNumber: "",
+         email: ""
+     });   
     }
 
     render() {
@@ -49,17 +66,17 @@ class AddVendor extends Component {
                     name="email"
                     type= "email"
                     placeholder="Email"
-                    value={this.state.emmail}
+                    value={this.state.email}
                     handleChange={this.handleInputChange}
                     />
                     <Button 
-                    title = "Cancel"
-                    type = "secondary"
+                    name = "Cancel"
+                    style = {{backgroundColor: 'gray'}}
                     action = {this.handleClearForm}
                     />
                     <Button 
-                    title = "Save"
-                    type = "primary"
+                    name = "Save"
+                    style = {{float: 'right'}}
                     action = {this.handleFormSubmit}
                     />
                 </form>

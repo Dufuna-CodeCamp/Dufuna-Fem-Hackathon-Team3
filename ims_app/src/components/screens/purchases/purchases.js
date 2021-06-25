@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddPurchase from '../../includes/form/AddPurchase';
+import AddPurchase from './AddPurchase';
 
 class Purchases extends Component {
     render () {

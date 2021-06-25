@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Input from './Input';
-import Button from './Button';
+import Input from '../../includes/input/Input';
+import Button from '../../includes/button/Button';
 
 
 class AddCategory extends Component {
@@ -15,6 +15,17 @@ class AddCategory extends Component {
     handleInputChange = (event) => {
         this.setState({[event.target.name]: event.target.value})
     }
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+        console.log(`category => ${this.state.category}`);
+    }
+    handleClearForm = (e) => {
+     e.preventDefault();
+     this.setState({
+         category: "",
+     });   
+    }
+
     
     render() {
         return (
@@ -28,13 +39,13 @@ class AddCategory extends Component {
                     onChange={this.handleInputChange}
                     />
                     <Button 
-                    title = "Cancel"
-                    type = "secondary"
+                    name = "Cancel"
+                    style = {{backgroundColor: 'gray'}}
                     action = {this.handleClearForm}
                     />
                     <Button 
-                    title = "Save"
-                    type = "primary"
+                    name = "Save"
+                    style = {{float: 'right'}}
                     action = {this.handleFormSubmit}
                     />
                     

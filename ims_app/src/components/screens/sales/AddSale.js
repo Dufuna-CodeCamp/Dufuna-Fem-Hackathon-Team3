@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import Input from './Input';
-import Button from './Button';
+import Input from '../../includes/input/Input';
+import Button from '../../includes/button/Button';
 
-class AddPurchase extends Component {
+
+class AddSale extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            inventory: "",
+            product: "",
             price: "",
             quantity: "",
             vendor: "",
-            createdDate: "",
+            createdAt: "",
             createdBy: ""
         }
     }
@@ -20,16 +21,36 @@ class AddPurchase extends Component {
     handleInputChange = (event) => {
         this.setState({[event.target.name]: event.target.value})
     }
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+        console.log(`product => ${this.state.product}`);
+        console.log(`price => ${this.state.price}`);
+        console.log(`quantity => ${this.state.quantity}`);
+        console.log(`vendor => ${this.state.vendor}`);
+        console.log(`createdAt => ${this.state.createdAt}`);
+        console.log(`createdBy => ${this.state.createdBy}`);
+    }
+    handleClearForm = (e) => {
+     e.preventDefault();
+     this.setState({
+         product: "",
+         price: "",
+         quantity: "",
+         vendor: "",
+         createdAt:"",
+         createdBy: ""
+     });   
+    }
 
     render() {
         return (
             <div>
                 <form>
                     <Input 
-                    name="inventory"
+                    name="product"
                     type= "text"
-                    placeholder="Inventory"
-                    value={this.state.inventory}
+                    placeholder="Product"
+                    value={this.state.product}
                     handleChange={this.handleInputChange}
                     />
                     <Input 
@@ -47,16 +68,16 @@ class AddPurchase extends Component {
                     handleChange={this.handleInputChange}
                     />
                     <Input 
-                    name="vendor"
+                    name="customerName"
                     type="text"
-                    placeholder="Vendor"
-                    value={this.state.vendor}
+                    placeholder="Customer Name"
+                    value={this.state.customerName}
                     handleChange={this.handleInputChange}
                     />
                     <Input 
-                    name="createdDate"
-                    type= "date"
-                    value={this.state.createdDate}
+                    name="createdAt"
+                    type= "datetime-local"
+                    value={this.state.createdAt}
                     handleChange={this.handleInputChange}
                     />
                     <Input 
@@ -67,13 +88,13 @@ class AddPurchase extends Component {
                     handleChange={this.handleInputChange}
                     />
                     <Button 
-                    title = "Cancel"
-                    type = "secondary"
+                    name = "Cancel"
+                    style = {{backgroundColor: 'gray'}}
                     action = {this.handleClearForm}
                     />
                     <Button 
-                    title = "Save"
-                    type = "primary"
+                    name = "Save"
+                    style = {{float: 'right'}}
                     action = {this.handleFormSubmit}
                     />
                 </form>
@@ -82,4 +103,4 @@ class AddPurchase extends Component {
     }
 }
 
-export default AddPurchase;
+export default AddSale;

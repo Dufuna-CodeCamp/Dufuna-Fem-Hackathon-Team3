@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddSale from '../../includes/form/AddSale';
+import AddSale from './AddSale';
 
 class Sales extends Component {
     render () {
