@@ -1,0 +1,16 @@
+{
+    "name": "cumioyemike/salesinventory",
+    "description": "Endpoints for inventory management system",
+    "authors": [
+        {
+            "name": "Cumi Oyemike",
+            "email": "cuoyemike@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.12"
+    },
+    "scripts": {
+        "start": "php -S localhost:8080"
+    }
+}
