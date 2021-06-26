@@ -21,8 +21,7 @@ class Sales extends Component {
                 {"name" : "Shelves", "quantity": "5", "customerName": "Oge", "createdBy": "Bolanle", "createdDate" : "6/08/2023","amount" : "19.00"},
                 {"name" : "flour", "quantity": "20", "customerName": "Buhari", "createdBy": "Elijah", "createdDate" : "6/08/2023", "amount" : "21.00"},
             ],
-            isListPage: true,
-            isAddPage: false
+            selectedItem : ""
         }
     }
 
@@ -32,38 +31,15 @@ class Sales extends Component {
         );
     }
 
-    showListPage = () => {
-        this.setState({ isListPage: true, isAddPage: false })
-    }
-
-    showAddPage = () => {
-        this.setState({ isListPage: false, isAddPage: true })
-    }
-    // handleFormSubmit = (val) => {
-    //     let sale = {
-    //         name: val.name,
-    //         price: val.price,
-    //         id: this.state.inventories.length + 1
-    //     };
-    //     this.setState({
-    //         inventories: [...this.state.inventories, inventory],
-    //         isListPage: true, isAddPage: false
-    //     });
-    // }
-
     render() {
         return (
             <Section
-                mainTitle='Sales'
-                title='sale'
-                isListPage={this.state.isListPage}
-                isAddPage={this.state.isAddPage}
+                title='Sales'
+                addButtonTitle='Add a new sale'
+                isListPage
                 addSerialNumber
-                onAddBtnClick={this.showAddPage}
-                headers={this.state.headers}z
+                headers={this.state.headers}
                 items={this.state.sales}
-                onCloseForm={this.showListPage}
-                handleFormSubmit={this.handleFormSubmit}
             />
         );
     }
