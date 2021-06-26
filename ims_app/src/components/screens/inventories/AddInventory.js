@@ -17,10 +17,14 @@ class AddInventory extends Component {
     handleInputChange = (event) => {
         this.setState({[event.target.name]: event.target.value})
     }
-    handleFormSubmit = (e) => {
-        e.preventDefault();
-        console.log(`product => ${this.state.product}`);
-        console.log(`quantity => ${this.state.quantity}`);
+    handleFormSubmit = () => {
+        if (this.state.product === '') {
+            alert('input product name');
+            return;
+        }
+        this.props.handleFormSubmit(
+            this.state
+        );
     }
     handleClearForm = (e) => {
      e.preventDefault();
@@ -33,7 +37,6 @@ class AddInventory extends Component {
     render() {
         return (
             <div>
-                <form>
                     <Input 
                     name="product"
                     type= "text"
@@ -51,14 +54,13 @@ class AddInventory extends Component {
                     <Button 
                     name = "Cancel"
                     style = {{backgroundColor: 'gray'}}
-                    action = {this.handleClearForm}
+                    action = {this.props.closeForm}
                     />
                     <Button 
                     name = "Save"
                     style = {{float: 'right'}}
                     action = {this.handleFormSubmit}
                     />
-                </form>
             </div>
         );
     }

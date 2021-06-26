@@ -50,6 +50,8 @@ class Nav extends Component {
                                 undefined
                         }
                         item={this.props.selectedItem}
+                        handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
+                        closeForm={this.props.onCloseForm}
                     />
                 }
             </div>

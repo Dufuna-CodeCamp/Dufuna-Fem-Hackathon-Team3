@@ -9,47 +9,45 @@ class AddCategory extends Component {
         super(props);
 
         this.state = {
-            category: ""
+            category: this.props.type === 'edit' ? this.props.item.name : ""
         }
     }
     handleInputChange = (event) => {
-        this.setState({[event.target.name]: event.target.value})
+        this.setState({ [event.target.name]: event.target.value })
     }
-    handleFormSubmit = (e) => {
-        e.preventDefault();
-        console.log(`category => ${this.state.category}`);
+    handleFormSubmit = () => {
+        if (this.state.category === '') {
+            alert('input category name');
+            return;
+        }
+        this.props.handleFormSubmit(this.state.category);
     }
     handleClearForm = (e) => {
-     e.preventDefault();
-     this.setState({
-         category: "",
-     });   
+        this.setState({
+            category: "",
+        });
     }
 
-    
     render() {
         return (
             <div>
-                <form>
-                    <Input 
+                <Input
                     name="category"
-                    type= "text"
+                    type="text"
                     placeholder="Category Name"
                     value={this.state.category}
-                    onChange={this.handleInputChange}
-                    />
-                    <Button 
-                    name = "Cancel"
-                    style = {{backgroundColor: 'gray'}}
-                    action = {this.handleClearForm}
-                    />
-                    <Button 
-                    name = "Save"
-                    style = {{float: 'right'}}
-                    action = {this.handleFormSubmit}
-                    />
-                    
-                </form>
+                    handleChange={this.handleInputChange}
+                />
+                <Button
+                    name="Cancel"
+                    style={{ backgroundColor: 'gray' }}
+                    action={this.props.closeForm}
+                />
+                <Button
+                    name="Save"
+                    style={{ float: 'right' }}
+                    action={this.handleFormSubmit}
+                />
             </div>
         );
     }
