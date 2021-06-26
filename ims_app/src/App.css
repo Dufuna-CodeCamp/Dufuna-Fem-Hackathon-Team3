@@ -49,11 +49,6 @@ body, p {
   padding: 30px;
 }
 
-.btn-disabled{
-  cursor: not-allowed;
-  background-color: #1e3c3e;
-}
-
 @media (max-width: 540px){
   .page-container{
       height: auto;

@@ -9,7 +9,6 @@ const Button = props => {
                 className={props.className}
                 onClick={props.action}
                 id='button'
-                disabled={props.btnDisabled}
             >
                 {props.name}
             </button>
