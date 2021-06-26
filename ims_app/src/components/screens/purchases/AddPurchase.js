@@ -21,14 +21,12 @@ class AddPurchase extends Component {
     handleInputChange = (event) => {
         this.setState({[event.target.name]: event.target.value})
     }
-    handleFormSubmit = (e) => {
-        e.preventDefault();
-        console.log(`inventory => ${this.state.inventory}`);
-        console.log(`price => ${this.state.price}`);
-        console.log(`quantity => ${this.state.quantity}`);
-        console.log(`vendor => ${this.state.vendor}`);
-        console.log(`createdDate => ${this.state.createdDate}`);
-        console.log(`createdBy => ${this.state.createdBy}`);
+    handleFormSubmit = () => {
+        if (this.state.inventory === '' || this.state.price === '' || this.state.quantity === '' || this.state.vendor === '') {
+            alert('please enter product name, price, quantity purchased and name of vendor');
+            return;
+        }
+        this.props.handleFormSubmit(this.state);
     }
     handleClearForm = (e) => {
      e.preventDefault();
@@ -42,11 +40,9 @@ class AddPurchase extends Component {
      });   
     }
     
-
     render() {
         return (
             <div>
-                <form>
                     <Input 
                     name="inventory"
                     type= "text"
@@ -91,14 +87,13 @@ class AddPurchase extends Component {
                     <Button 
                     name = "Cancel"
                     style = {{backgroundColor: 'gray'}}
-                    action = {this.handleClearForm}
+                    action = {this.props.closeForm}
                     />
                     <Button 
                     name = "Save"
                     style = {{float: 'right'}}
                     action = {this.handleFormSubmit}
                     />
-                </form>
             </div>
         );
     }
