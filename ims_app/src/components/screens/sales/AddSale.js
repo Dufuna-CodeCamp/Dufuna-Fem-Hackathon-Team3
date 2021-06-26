@@ -9,12 +9,12 @@ class AddSale extends Component {
         super(props);
 
         this.state = {
-            product: this.props.type === 'edit' ? this.props.item.name : "",
-            price: this.props.type === 'edit' ? this.props.item.amount : "",
-            quantity: this.props.type === 'edit' ? this.props.item.quantity : "",
-            customerName: this.props.type === 'edit' ? this.props.item.customerName : "",
-            createdAt: this.props.type === 'edit' ? this.props.item.createdAt : "",
-            createdBy: this.props.type === 'edit' ? this.props.item.createdBy : ""
+            product: "",
+            price: "",
+            quantity: "",
+            customerName: "",
+            createdAt: "",
+            createdBy: ""
         }
     }
 
@@ -23,7 +23,7 @@ class AddSale extends Component {
     }
     handleFormSubmit = () => {
         if (this.state.product === '' || this.state.amount === '' || this.state.quantity === '') {
-            alert('please enter at least Product name, the price and quantity sold');
+            alert('please enter at least product name, the price and quantity sold');
             return;
         }
         this.props.handleFormSubmit(this.state);
@@ -87,7 +87,7 @@ class AddSale extends Component {
                     <Button
                         name="Cancel"
                         style={{ backgroundColor: 'gray' }}
-                        action={this.handleClearForm}
+                        action={this.props.closeForm}
                     />
                     <Button
                         name="Save"

@@ -21,25 +21,52 @@ class Sales extends Component {
                 {"name" : "Shelves", "quantity": "5", "customerName": "Oge", "createdBy": "Bolanle", "createdAt" : "6/08/2023 1:15","amount" : "19.00"},
                 {"name" : "flour", "quantity": "20", "customerName": "Buhari", "createdBy": "Elijah", "createdAt" : "6/08/2023 10:05", "amount" : "21.00"},
             ],
-            selectedItem : ""
+            isListPage: true,
+            isAddPage: false
         }
     }
 
-    setSelectedItem= (val) => {
-        this.setState({selectedItem: val.name},
-            alert(`${val.name} was clicked`)
-        );
+    showListPage = () => {
+        this.setState({ isListPage: true, isAddPage: false })
+    }
+
+    showAddPage = () => {
+        this.setState({ isListPage: false, isAddPage: true })
+    }
+    createdAt = () => {
+        Date();
+    }
+    handleFormSubmit = (val) => {
+        let sale = {
+            name: val.product,
+            amount: val.amount,
+            quantity: val.quantity,
+            customerName: val.customerName,
+            createdAt: this.createdAt(),
+            createdBy: val.createdBy
+        };
+        this.setState(
+            {
+                sales: [...this.state.sales, sale]
+            }
+        )
+        this.setState({
+            isListPage: true, isAddPage: false
+        });
     }
 
     render() {
         return (
             <Section
+                mainTitle='Sales'
                 title='sale'
-                addButtonTitle='Add a new sale'
-                isListPage
-                addSerialNumber
+                isListPage={this.state.isListPage}
+                isAddPage={this.state.isAddPage}
+                onAddBtnClick={this.showAddPage}
                 headers={this.state.headers}
                 items={this.state.sales}
+                onCloseForm={this.showListPage}
+                handleFormSubmit={this.handleFormSubmit}
             />
         );
     }
