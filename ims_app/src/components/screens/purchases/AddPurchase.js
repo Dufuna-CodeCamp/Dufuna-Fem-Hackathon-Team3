@@ -71,12 +71,12 @@ class AddPurchase extends Component {
                     value={this.state.vendor}
                     handleChange={this.handleInputChange}
                     />
-                    <Input 
+                    {/* <Input 
                     name="createdDate"
                     type= "date"
                     value={this.state.createdDate}
                     handleChange={this.handleInputChange}
-                    />
+                    /> */}
                     <Input 
                     name="createdBy"
                     type= "text"
