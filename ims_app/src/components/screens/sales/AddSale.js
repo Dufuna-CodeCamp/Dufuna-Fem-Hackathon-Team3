@@ -9,12 +9,12 @@ class AddSale extends Component {
         super(props);
 
         this.state = {
-            product: this.props.type === 'edit' ? this.props.item.name : "",
-            price: this.props.type === 'edit' ? this.props.item.amount : "",
-            quantity: this.props.type === 'edit' ? this.props.item.quantity : "",
-            customerName: this.props.type === 'edit' ? this.props.item.customerName : "",
-            createdAt: this.props.type === 'edit' ? this.props.item.createdAt : "",
-            createdBy: this.props.type === 'edit' ? this.props.item.createdBy : ""
+            product:  "",
+            price:  "",
+            quantity:  "",
+            customerName:  "",
+            createdAt:  "",
+            createdBy:  ""
         }
     }
 
@@ -84,10 +84,10 @@ class AddSale extends Component {
                         value={this.state.createdBy}
                         handleChange={this.handleInputChange}
                     />
-                    <Button
+               <Button
                         name="Cancel"
                         style={{ backgroundColor: 'gray' }}
-                        action={this.handleClearForm}
+                        action={this.props.closeForm}
                     />
                     <Button
                         name="Save"
