@@ -22,8 +22,8 @@ class AddPurchase extends Component {
         this.setState({[event.target.name]: event.target.value})
     }
     handleFormSubmit = () => {
-        if (this.state.inventory === '' || this.state.price === '' || this.state.quantity === '' || this.state.vendor === '') {
-            alert('please enter product name, price, quantity purchased and name of vendor');
+        if (this.state.inventory === '' || this.state.price === '' || this.state.quantity === '' ) {
+            alert('please enter product name, price and quantity purchased');
             return;
         }
         this.props.handleFormSubmit(this.state);
@@ -71,12 +71,6 @@ class AddPurchase extends Component {
                     value={this.state.vendor}
                     handleChange={this.handleInputChange}
                     />
-                    {/* <Input 
-                    name="createdDate"
-                    type= "date"
-                    value={this.state.createdDate}
-                    handleChange={this.handleInputChange}
-                    /> */}
                     <Input 
                     name="createdBy"
                     type= "text"
