@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import AddCategory from './categories/AddCategory';
+import AddInventory from './inventories/AddInventory';
+import AddVendor from './vendors/AddVendor';
+import AddPurchase from './purchases/AddPurchase';
+import AddSale from './sales/AddSale';
 
 class Form extends Component {
     constructor(props) {
@@ -8,25 +13,50 @@ class Form extends Component {
 
     render() {
         return (
-            <div>
+            <div className='form-div'>
                 {this.props.name === 'inventory' && (
-                        <p>Add Inventory</p>
+                    <AddInventory
+                        handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
+                        closeForm={this.props.closeForm}
+                    />
                 )}
                 {this.props.name === 'category' && (
                     this.props.type === 'add' ?
-                        <p>Add Category</p> :
-                        <p>Edit Category {this.props.item.name}</p>
+                        <AddCategory
+                            handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
+                            closeForm={this.props.closeForm}
+                        /> :
+                        <AddCategory
+                            handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
+                            closeForm={this.props.closeForm}
+                            item={this.props.item}
+                            type="edit"
+                        />
                 )}
                 {this.props.name === 'vendor' && (
                     this.props.type === 'add' ?
-                        <p>Add Vendor</p> :
-                        <p>Edit Vendor {this.props.item.name}</p>
+                        <AddVendor
+                            handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
+                            closeForm={this.props.closeForm}
+                        /> :
+                        <AddVendor
+                            handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
+                            closeForm={this.props.closeForm}
+                            item={this.props.item}
+                            type="edit"
+                        />
                 )}
                 {this.props.name === 'purchase' && (
-                        <p>Add Purchase</p>
+                    <AddPurchase
+                        handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
+                        closeForm={this.props.closeForm}
+                    />
                 )}
                 {this.props.name === 'sale' && (
-                        <p>Add Sale</p>
+                    <AddSale
+                        handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
+                        closeForm={this.props.closeForm}
+                    />
                 )}
             </div>
         );

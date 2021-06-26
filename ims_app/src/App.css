@@ -44,6 +44,16 @@ body, p {
   width: 80%;
 }
 
+.form-div{
+  width: 80%;
+  padding: 30px;
+}
+
+.btn-disabled{
+  cursor: not-allowed;
+  background-color: #1e3c3e;
+}
+
 @media (max-width: 540px){
   .page-container{
       height: auto;
