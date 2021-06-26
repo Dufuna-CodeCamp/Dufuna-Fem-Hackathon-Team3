@@ -9,98 +9,94 @@ class AddSale extends Component {
         super(props);
 
         this.state = {
-            product: "",
-            price: "",
-            quantity: "",
-            vendor: "",
-            createdAt: "",
-            createdBy: ""
+            product: this.props.type === 'edit' ? this.props.item.name : "",
+            price: this.props.type === 'edit' ? this.props.item.amount : "",
+            quantity: this.props.type === 'edit' ? this.props.item.quantity : "",
+            customerName: this.props.type === 'edit' ? this.props.item.customerName : "",
+            createdAt: this.props.type === 'edit' ? this.props.item.createdAt : "",
+            createdBy: this.props.type === 'edit' ? this.props.item.createdBy : ""
         }
     }
-    
+
     handleInputChange = (event) => {
-        this.setState({[event.target.name]: event.target.value})
+        this.setState({ [event.target.name]: event.target.value })
     }
-    handleFormSubmit = (e) => {
-        e.preventDefault();
-        console.log(`product => ${this.state.product}`);
-        console.log(`price => ${this.state.price}`);
-        console.log(`quantity => ${this.state.quantity}`);
-        console.log(`vendor => ${this.state.vendor}`);
-        console.log(`createdAt => ${this.state.createdAt}`);
-        console.log(`createdBy => ${this.state.createdBy}`);
-    }
-    handleClearForm = (e) => {
-     e.preventDefault();
-     this.setState({
-         product: "",
-         price: "",
-         quantity: "",
-         vendor: "",
-         createdAt:"",
-         createdBy: ""
-     });   
+    handleFormSubmit = () => {
+        if (this.state.product === '' || this.state.amount === '' || this.state.quantity === '') {
+            alert('please enter at least Product name, the price and quantity sold');
+            return;
+        }
+        this.props.handleFormSubmit(this.state);
+        }
+        handleClearForm = (e) => {
+            this.setState({
+                product: "",
+                price: "",
+                quantity: "",
+                customerName: "",
+                createdAt: "",
+                createdBy: ""
+            });
+        }
+
+
+        render() {
+            return (
+                <div>
+                    <Input
+                        name="product"
+                        type="text"
+                        placeholder="Product"
+                        value={this.state.product}
+                        handleChange={this.handleInputChange}
+                    />
+                    <Input
+                        name="price"
+                        type="text"
+                        placeholder="Price($)"
+                        value={this.state.price}
+                        handleChange={this.handleInputChange}
+                    />
+                    <Input
+                        name="quantity"
+                        type="number"
+                        placeholder="0"
+                        value={this.state.quantity}
+                        handleChange={this.handleInputChange}
+                    />
+                    <Input
+                        name="customerName"
+                        type="text"
+                        placeholder="Customer Name"
+                        value={this.state.customerName}
+                        handleChange={this.handleInputChange}
+                    />
+                    <Input
+                        name="createdAt"
+                        type="datetime-local"
+                        value={this.state.createdAt}
+                        handleChange={this.handleInputChange}
+                    />
+                    <Input
+                        name="createdBy"
+                        type="text"
+                        placeholder="Created By"
+                        value={this.state.createdBy}
+                        handleChange={this.handleInputChange}
+                    />
+                    <Button
+                        name="Cancel"
+                        style={{ backgroundColor: 'gray' }}
+                        action={this.handleClearForm}
+                    />
+                    <Button
+                        name="Save"
+                        style={{ float: 'right' }}
+                        action={this.handleFormSubmit}
+                    />
+                </div >
+            );
+        }
     }
 
-    render() {
-        return (
-            <div>
-                <form>
-                    <Input 
-                    name="product"
-                    type= "text"
-                    placeholder="Product"
-                    value={this.state.product}
-                    handleChange={this.handleInputChange}
-                    />
-                    <Input 
-                    name="price"
-                    type="text"
-                    placeholder="Price($)"
-                    value={this.state.price}
-                    handleChange={this.handleInputChange}
-                    />
-                    <Input 
-                    name="quantity"
-                    type= "number"
-                    placeholder="0"
-                    value={this.state.quantity}
-                    handleChange={this.handleInputChange}
-                    />
-                    <Input 
-                    name="customerName"
-                    type="text"
-                    placeholder="Customer Name"
-                    value={this.state.customerName}
-                    handleChange={this.handleInputChange}
-                    />
-                    <Input 
-                    name="createdAt"
-                    type= "datetime-local"
-                    value={this.state.createdAt}
-                    handleChange={this.handleInputChange}
-                    />
-                    <Input 
-                    name="createdBy"
-                    type= "text"
-                    placeholder="Created By"
-                    value={this.state.createdBy}
-                    handleChange={this.handleInputChange}
-                    />
-                    <Button 
-                    name = "Cancel"
-                    style = {{backgroundColor: 'gray'}}
-                    action = {this.handleClearForm}
-                    />
-                    <Button 
-                    name = "Save"
-                    style = {{float: 'right'}}
-                    action = {this.handleFormSubmit}
-                    />
-                </form>
-            </div>
-        );
-    }
-}
-
-export default AddSale;
+    export default AddSale;

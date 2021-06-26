@@ -53,10 +53,17 @@ class Form extends Component {
                     />
                 )}
                 {this.props.name === 'sale' && (
+                    this.props.type === 'add' ?
                     <AddSale
                         handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
                         closeForm={this.props.closeForm}
-                    />
+                    /> :
+                    <AddSale
+                    handleFormSubmit={(val) => this.props.handleFormSubmit(val)}
+                    closeForm={this.props.closeForm}
+                    item={this.props.item}
+                    type="edit"
+                />
                 )}
             </div>
         );
